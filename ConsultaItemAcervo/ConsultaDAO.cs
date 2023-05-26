@@ -17,30 +17,6 @@ namespace ConsultaItemAcervo
             Connection = connection;
         }
 
-        public void Consultar(ConsultaItemModel consultaItem)
-        {
-            using (SqlCommand command = Connection.CreateCommand())
-            {
-                SqlTransaction t = Connection.BeginTransaction();
-                try
-                {
-                    StringBuilder sql = new StringBuilder();
-                    sql.AppendLine($"SELECT codItem, nome, tipoItem, nomeLocal, nomeAutor, nomeColecao, secao, statusItem FROM mvtBibItemAcervo WHERE codItem = @codItem");
-                    command.CommandText = sql.ToString();
-                    command.Parameters.Add(new SqlParameter("@codItem", consultaItem.CodItem));
-
-                    command.Transaction = t;
-                    command.ExecuteNonQuery();
-                    t.Commit();
-                }
-                catch (Exception ex)
-                {
-                    t.Rollback();
-                    throw ex;
-                }
-            }
-        }
-
         public bool VerificaCampos(ConsultaItemModel consultaItem)
         {
             if (string.IsNullOrEmpty(consultaItem.NomeItem) || string.IsNullOrWhiteSpace(consultaItem.NomeItem))
@@ -50,28 +26,6 @@ namespace ConsultaItemAcervo
             }
             return true;
 
-        }
-
-        public List<ConsultaItemModel> GetItens2(ConsultaItemModel consultaItem)
-        {
-            List<ConsultaItemModel> itens = new List<ConsultaItemModel>();
-            using (SqlCommand command = Connection.CreateCommand())
-            {
-                StringBuilder sql = new StringBuilder();
-                sql.AppendLine("SELECT codItem, nome, tipoItem, nomeEditora, nomeLocal, nomeAutor, nomeColecao, secao, statusItem FROM mvtBibItemAcervo WHERE nomeAutor = @nomeAutor" +
-                    " AND nome = '%@nome%' ORDER BY codItem");
-                command.CommandText = sql.ToString();
-                command.Parameters.Add(new SqlParameter("@nomeAutor", consultaItem.NomeAutor));
-                command.Parameters.Add(new SqlParameter("@nome", consultaItem.NomeItem));
-                using (SqlDataReader dr = command.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        itens.Add(PopulateDrItem(dr));
-                    }
-                }
-            }
-            return itens;
         }
 
         public List<ConsultaItemModel> GetItens()

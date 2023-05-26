@@ -10,3 +10,15 @@ C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debu
 C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.exe
 C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.pdb
 C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.FormBuscarAutor.resources
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.exe.config
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.exe
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.pdb
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.AssemblyReference.cache
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.FormBuscarAutor.resources
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.FormConsultaItem.resources
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.Properties.Resources.resources
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.GenerateResource.cache
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.CoreCompileInputs.cache
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.exe
+C:\Users\Gustavo\Documents\Movtech\Projeto 1\Movtech-Biblioteca-ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.pdb
