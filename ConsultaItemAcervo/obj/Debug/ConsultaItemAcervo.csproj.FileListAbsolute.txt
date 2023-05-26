@@ -1,0 +1,12 @@
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.exe.config
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.exe
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\bin\Debug\ConsultaItemAcervo.pdb
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.AssemblyReference.cache
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.SuggestedBindingRedirects.cache
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.FormConsultaItem.resources
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.Properties.Resources.resources
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.GenerateResource.cache
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.csproj.CoreCompileInputs.cache
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.exe
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.pdb
+C:\Users\estagiario1\source\repos\ConsultaItemAcervo\ConsultaItemAcervo\obj\Debug\ConsultaItemAcervo.FormBuscarAutor.resources
