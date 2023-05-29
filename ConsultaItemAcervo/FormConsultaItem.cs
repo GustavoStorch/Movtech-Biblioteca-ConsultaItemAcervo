@@ -26,41 +26,34 @@ namespace ConsultaItemAcervo
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {    
-            string nomeItem = txtNomeItemAcervo.Text.Trim();
-            string nomeAutor = txtNomeAutor.Text.Trim();
-            string nomeLocal = txtNomeLocal.Text.Trim();
-            string secao = txtNomeSecao.Text.Trim();
-            string tipoItem = cbxTipoItem.Text.Trim();
-            string stauts = cbxStatus.Text.Trim();
-            
             StringBuilder sql = new StringBuilder();
             sql.AppendLine("SELECT codItem, nome, tipoItem, nomeEditora, nomeLocal, nomeAutor, nomeColecao, secao, statusItem");
             sql.AppendLine("FROM mvtBibItemAcervo");
             sql.AppendLine("WHERE 1 = 1");
 
-            if (!string.IsNullOrEmpty(nomeItem))
+            if (!string.IsNullOrEmpty(txtNomeItemAcervo.Text.Trim()))
             {
-                sql.AppendLine($"AND nome LIKE '%{nomeItem}%'");
+                sql.AppendLine($"AND nome LIKE '%{txtNomeItemAcervo.Text.Trim()}%'");
             }
-            if (!string.IsNullOrEmpty(nomeAutor))
+            if (!string.IsNullOrEmpty(txtNomeAutor.Text.Trim()))
             {
-                sql.AppendLine($"AND nomeAutor LIKE '%{nomeAutor}%'");
+                sql.AppendLine($"AND nomeAutor LIKE '%{txtNomeAutor.Text.Trim()}%'");
             }
-            if (!string.IsNullOrEmpty(nomeLocal))
+            if (!string.IsNullOrEmpty(txtNomeLocal.Text.Trim()))
             {
-                sql.AppendLine($"AND nomeLocal LIKE '%{nomeLocal}%'");
+                sql.AppendLine($"AND nomeLocal LIKE '%{txtNomeLocal.Text.Trim()}%'");
             }
-            if (!string.IsNullOrEmpty(secao))
+            if (!string.IsNullOrEmpty(txtNomeSecao.Text.Trim()))
             {
-                sql.AppendLine($"AND secao = '{secao}'");
+                sql.AppendLine($"AND secao = '{txtNomeSecao.Text.Trim()}'");
             }
-            if (!string.IsNullOrEmpty(tipoItem))
+            if (!string.IsNullOrEmpty(cbxTipoItem.Text.Trim()))
             {
-                sql.AppendLine($"AND tipoItem = '{tipoItem}'");
+                sql.AppendLine($"AND tipoItem = '{cbxTipoItem.Text.Trim()}'");
             }
-            if (!string.IsNullOrEmpty(stauts))
+            if (!string.IsNullOrEmpty(cbxStatus.Text.Trim()))
             {
-                sql.AppendLine($"AND statusItem = '{stauts}'");
+                sql.AppendLine($"AND statusItem = '{cbxStatus.Text.Trim()}'");
             }
             
             dtgDadosConsultaItem.Rows.Clear();
