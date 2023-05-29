@@ -119,6 +119,7 @@ namespace ConsultaItemAcervo
             txtNomeAutor.Text = String.Empty;
             txtNomeColecao.Text = String.Empty;
             txtNomeSecao.Text = String.Empty;
+            dtgDadosConsultaItem.Rows.Clear();
         }
 
         private void btnBuscarSecao_Click(object sender, EventArgs e)
