@@ -25,48 +25,49 @@ namespace ConsultaItemAcervo
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
-        {
+        {    
             string nomeItem = txtNomeItemAcervo.Text.Trim();
             string nomeAutor = txtNomeAutor.Text.Trim();
             string nomeLocal = txtNomeLocal.Text.Trim();
             string secao = txtNomeSecao.Text.Trim();
             string tipoItem = cbxTipoItem.Text.Trim();
             string stauts = cbxStatus.Text.Trim();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.AppendLine("SELECT codItem, nome, tipoItem, nomeEditora, nomeLocal, nomeAutor, nomeColecao, secao, statusItem");
+            sql.AppendLine("FROM mvtBibItemAcervo");
+            sql.AppendLine("WHERE 1 = 1");
 
-                StringBuilder sql = new StringBuilder();
-                sql.AppendLine("SELECT codItem, nome, tipoItem, nomeEditora, nomeLocal, nomeAutor, nomeColecao, secao, statusItem");
-                sql.AppendLine("FROM mvtBibItemAcervo");
-                sql.AppendLine("WHERE 1 = 1");
-
-                if (!string.IsNullOrEmpty(nomeItem))
-                {
-                    sql.AppendLine($"AND nome LIKE '%{nomeItem}%'");
-                }
-                if (!string.IsNullOrEmpty(nomeAutor))
-                {
-                    sql.AppendLine($"AND nomeAutor LIKE '%{nomeAutor}%'");
-                }
-                if (!string.IsNullOrEmpty(nomeLocal))
-                {
-                    sql.AppendLine($"AND nomeLocal LIKE '%{nomeLocal}%'");
-                }
-                if (!string.IsNullOrEmpty(secao))
-                {
-                    sql.AppendLine($"AND secao = '{secao}'");
-                }
-                if (!string.IsNullOrEmpty(tipoItem))
-                {
-                    sql.AppendLine($"AND tipoItem = '{tipoItem}'");
-                }
-                if (!string.IsNullOrEmpty(stauts))
-                {
-                    sql.AppendLine($"AND stautsItem = '{stauts}'");
-                }
-
-                dtgDadosConsultaItem.Rows.Clear();
+            if (!string.IsNullOrEmpty(nomeItem))
+            {
+                sql.AppendLine($"AND nome LIKE '%{nomeItem}%'");
+            }
+            if (!string.IsNullOrEmpty(nomeAutor))
+            {
+                sql.AppendLine($"AND nomeAutor LIKE '%{nomeAutor}%'");
+            }
+            if (!string.IsNullOrEmpty(nomeLocal))
+            {
+                sql.AppendLine($"AND nomeLocal LIKE '%{nomeLocal}%'");
+            }
+            if (!string.IsNullOrEmpty(secao))
+            {
+                sql.AppendLine($"AND secao = '{secao}'");
+            }
+            if (!string.IsNullOrEmpty(tipoItem))
+            {
+                sql.AppendLine($"AND tipoItem = '{tipoItem}'");
+            }
+            if (!string.IsNullOrEmpty(stauts))
+            {
+                sql.AppendLine($"AND statusItem = '{stauts}'");
+            }
+            
+            dtgDadosConsultaItem.Rows.Clear();
 
             using (SqlConnection connection = DaoConnection.GetConexao())
             {
+             
                 using (SqlCommand command = new SqlCommand(sql.ToString(), connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
@@ -88,29 +89,6 @@ namespace ConsultaItemAcervo
             }
         }
 
-        /*private void InitializeTable()
-        {
-            dtgDadosConsultaItem.Rows.Clear();
-            using (SqlConnection connection = DaoConnection.GetConexao())
-            {
-                ConsultaDAO dao = new ConsultaDAO(connection);
-                List<ConsultaItemModel> consultaItens = dao.GetItens();
-                foreach (ConsultaItemModel consultaItem in consultaItens)
-                {
-                    DataGridViewRow row = dtgDadosConsultaItem.Rows[dtgDadosConsultaItem.Rows.Add()];
-                    row.Cells[colCodItem.Index].Value = consultaItem.CodItem;
-                    row.Cells[colNomeItem.Index].Value = consultaItem.NomeItem;
-                    row.Cells[colTipoItem.Index].Value = consultaItem.TipoItem;
-                    row.Cells[colNomeLocal.Index].Value = consultaItem.NomeLocal;
-                    row.Cells[colNomeAutor.Index].Value = consultaItem.NomeAutor;
-                    row.Cells[colNomeColecao.Index].Value = consultaItem.NomeColecao;
-                    row.Cells[colNomeSecao.Index].Value = consultaItem.NomeSecao;
-                    row.Cells[colStatusItem.Index].Value = consultaItem.StatusItem;
-                    row.Cells[colNomeEditora.Index].Value = consultaItem.NomeEditora;
-                }
-            }
-        }*/
-
         private void dtgDadosConsultaItem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1 && e.ColumnIndex > -1)
@@ -126,17 +104,6 @@ namespace ConsultaItemAcervo
             }
         }
 
-        private void txtNomeItemAcervo_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtNomeItemAcervo.Text))
-            {
-                btnLimpar.Enabled = false;
-            } else
-            {
-                btnLimpar.Enabled = true;
-            }       
-        }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             limparForm();
@@ -145,9 +112,9 @@ namespace ConsultaItemAcervo
         public void limparForm()
         {
             txtCodItemAcervo.Text = String.Empty;
-            cbxStatus.Text = String.Empty;
+            cbxStatus.SelectedIndex = -1;
             txtNomeItemAcervo.Text = String.Empty;
-            cbxTipoItem.Text = String.Empty;
+            cbxTipoItem.SelectedIndex = -1;
             txtNomeLocal.Text = String.Empty;
             txtNomeAutor.Text = String.Empty;
             txtNomeColecao.Text = String.Empty;
@@ -156,7 +123,7 @@ namespace ConsultaItemAcervo
 
         private void btnBuscarSecao_Click(object sender, EventArgs e)
         {
-
+            CarregaFormBuscaSecoes();
         }
 
         private void btnBuscarAutor_Click(object sender, EventArgs e)
@@ -166,12 +133,7 @@ namespace ConsultaItemAcervo
 
         private void btnBuscarLocal_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnBuscarColecao_Click(object sender, EventArgs e)
-        {
-
+            CarregaFormBuscaLocais();
         }
 
         public void CarregaFormBuscaAutores()
@@ -180,6 +142,106 @@ namespace ConsultaItemAcervo
             formBuscaAutor.ShowDialog();
             txtNomeAutor.Text = formBuscaAutor.nomeAutor;
 
+        }
+
+        public void CarregaFormBuscaLocais()
+        {
+            FormBuscarLocal formBuscaLocal = new FormBuscarLocal();
+            formBuscaLocal.ShowDialog();
+            txtNomeLocal.Text = formBuscaLocal.nomeLocal;
+
+        }
+
+        public void CarregaFormBuscaSecoes()
+        {
+            FormBuscarSecao formBuscaSecao = new FormBuscarSecao();
+            formBuscaSecao.ShowDialog();
+
+            txtNomeSecao.Text = formBuscaSecao.nomeSecao;
+
+        }
+
+        private void txtNomeItemAcervo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeItemAcervo.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+        private void txtNomeSecao_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeSecao.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+
+        private void txtNomeAutor_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeAutor.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+
+        private void cbxTipoItem_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbxTipoItem.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+
+        private void txtNomeLocal_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeLocal.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+
+        private void cbxStatus_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbxStatus.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
+        }
+
+        private void txtNomeColecao_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeColecao.Text))
+            {
+                btnLimpar.Enabled = false;
+            }
+            else
+            {
+                btnLimpar.Enabled = true;
+            }
         }
     }
 }

@@ -47,6 +47,9 @@
             this.cbxTipoItem = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gpxDadosConsultaItem = new System.Windows.Forms.GroupBox();
+            this.btnBuscarSecao = new System.Windows.Forms.Button();
+            this.btnBuscarLocal = new System.Windows.Forms.Button();
+            this.btnBuscarAutor = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dtgDadosConsultaItem = new System.Windows.Forms.DataGridView();
             this.colNomeItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +62,6 @@
             this.colNomeSecao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatusItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnBuscarAutor = new System.Windows.Forms.Button();
-            this.btnBuscarLocal = new System.Windows.Forms.Button();
-            this.btnBuscarColecao = new System.Windows.Forms.Button();
-            this.btnBuscarSecao = new System.Windows.Forms.Button();
             this.gpxDadosConsultaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDadosConsultaItem)).BeginInit();
             this.SuspendLayout();
@@ -145,66 +144,93 @@
             this.txtCodItemAcervo.Location = new System.Drawing.Point(91, 31);
             this.txtCodItemAcervo.Name = "txtCodItemAcervo";
             this.txtCodItemAcervo.Size = new System.Drawing.Size(276, 26);
-            this.txtCodItemAcervo.TabIndex = 8;
+            this.txtCodItemAcervo.TabIndex = 0;
             // 
             // txtNomeSecao
             // 
             this.txtNomeSecao.Location = new System.Drawing.Point(91, 74);
             this.txtNomeSecao.Name = "txtNomeSecao";
             this.txtNomeSecao.Size = new System.Drawing.Size(217, 26);
-            this.txtNomeSecao.TabIndex = 9;
+            this.txtNomeSecao.TabIndex = 2;
+            this.txtNomeSecao.TextChanged += new System.EventHandler(this.txtNomeSecao_TextChanged);
             // 
             // txtNomeColecao
             // 
+            this.txtNomeColecao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeColecao.Location = new System.Drawing.Point(492, 162);
             this.txtNomeColecao.Name = "txtNomeColecao";
-            this.txtNomeColecao.Size = new System.Drawing.Size(756, 26);
+            this.txtNomeColecao.Size = new System.Drawing.Size(820, 26);
             this.txtNomeColecao.TabIndex = 10;
+            this.txtNomeColecao.TextChanged += new System.EventHandler(this.txtNomeColecao_TextChanged);
             // 
             // txtNomeAutor
             // 
+            this.txtNomeAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeAutor.Location = new System.Drawing.Point(492, 77);
             this.txtNomeAutor.Name = "txtNomeAutor";
             this.txtNomeAutor.Size = new System.Drawing.Size(756, 26);
-            this.txtNomeAutor.TabIndex = 11;
+            this.txtNomeAutor.TabIndex = 4;
+            this.txtNomeAutor.TextChanged += new System.EventHandler(this.txtNomeAutor_TextChanged);
             // 
             // txtNomeLocal
             // 
+            this.txtNomeLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeLocal.Location = new System.Drawing.Point(492, 116);
             this.txtNomeLocal.Name = "txtNomeLocal";
             this.txtNomeLocal.Size = new System.Drawing.Size(756, 26);
-            this.txtNomeLocal.TabIndex = 12;
+            this.txtNomeLocal.TabIndex = 7;
+            this.txtNomeLocal.TextChanged += new System.EventHandler(this.txtNomeLocal_TextChanged);
             // 
             // txtNomeItemAcervo
             // 
+            this.txtNomeItemAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeItemAcervo.Location = new System.Drawing.Point(492, 31);
             this.txtNomeItemAcervo.Name = "txtNomeItemAcervo";
             this.txtNomeItemAcervo.Size = new System.Drawing.Size(820, 26);
-            this.txtNomeItemAcervo.TabIndex = 13;
+            this.txtNomeItemAcervo.TabIndex = 1;
             this.txtNomeItemAcervo.TextChanged += new System.EventHandler(this.txtNomeItemAcervo_TextChanged);
             // 
             // cbxStatus
             // 
-            this.cbxStatus.Enabled = false;
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Reservado",
+            "Emprestado",
+            "Disponível"});
             this.cbxStatus.Location = new System.Drawing.Point(91, 162);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(276, 28);
-            this.cbxStatus.TabIndex = 14;
+            this.cbxStatus.TabIndex = 9;
+            this.cbxStatus.TextChanged += new System.EventHandler(this.cbxStatus_TextChanged);
             // 
             // cbxTipoItem
             // 
-            this.cbxTipoItem.Enabled = false;
+            this.cbxTipoItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoItem.FormattingEnabled = true;
+            this.cbxTipoItem.ItemHeight = 20;
+            this.cbxTipoItem.Items.AddRange(new object[] {
+            "Livro",
+            "Revista",
+            "Jornal",
+            "DVD/CD",
+            "Folheto",
+            "Artigo"});
             this.cbxTipoItem.Location = new System.Drawing.Point(91, 116);
             this.cbxTipoItem.Name = "cbxTipoItem";
             this.cbxTipoItem.Size = new System.Drawing.Size(276, 28);
-            this.cbxTipoItem.TabIndex = 15;
+            this.cbxTipoItem.TabIndex = 6;
+            this.cbxTipoItem.TextChanged += new System.EventHandler(this.cbxTipoItem_TextChanged);
             // 
             // gpxDadosConsultaItem
             // 
+            this.gpxDadosConsultaItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gpxDadosConsultaItem.Controls.Add(this.btnBuscarSecao);
-            this.gpxDadosConsultaItem.Controls.Add(this.btnBuscarColecao);
             this.gpxDadosConsultaItem.Controls.Add(this.btnBuscarLocal);
             this.gpxDadosConsultaItem.Controls.Add(this.btnBuscarAutor);
             this.gpxDadosConsultaItem.Controls.Add(this.lblCodItem);
@@ -230,6 +256,47 @@
             this.gpxDadosConsultaItem.TabStop = false;
             this.gpxDadosConsultaItem.Text = "Consulta Item";
             // 
+            // btnBuscarSecao
+            // 
+            this.btnBuscarSecao.FlatAppearance.BorderSize = 0;
+            this.btnBuscarSecao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarSecao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscarSecao.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
+            this.btnBuscarSecao.Location = new System.Drawing.Point(309, 74);
+            this.btnBuscarSecao.Name = "btnBuscarSecao";
+            this.btnBuscarSecao.Size = new System.Drawing.Size(58, 26);
+            this.btnBuscarSecao.TabIndex = 3;
+            this.btnBuscarSecao.UseVisualStyleBackColor = true;
+            this.btnBuscarSecao.Click += new System.EventHandler(this.btnBuscarSecao_Click);
+            // 
+            // btnBuscarLocal
+            // 
+            this.btnBuscarLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarLocal.FlatAppearance.BorderSize = 0;
+            this.btnBuscarLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarLocal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscarLocal.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
+            this.btnBuscarLocal.Location = new System.Drawing.Point(1254, 116);
+            this.btnBuscarLocal.Name = "btnBuscarLocal";
+            this.btnBuscarLocal.Size = new System.Drawing.Size(58, 26);
+            this.btnBuscarLocal.TabIndex = 8;
+            this.btnBuscarLocal.UseVisualStyleBackColor = true;
+            this.btnBuscarLocal.Click += new System.EventHandler(this.btnBuscarLocal_Click);
+            // 
+            // btnBuscarAutor
+            // 
+            this.btnBuscarAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarAutor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarAutor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscarAutor.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
+            this.btnBuscarAutor.Location = new System.Drawing.Point(1254, 77);
+            this.btnBuscarAutor.Name = "btnBuscarAutor";
+            this.btnBuscarAutor.Size = new System.Drawing.Size(58, 26);
+            this.btnBuscarAutor.TabIndex = 5;
+            this.btnBuscarAutor.UseVisualStyleBackColor = true;
+            this.btnBuscarAutor.Click += new System.EventHandler(this.btnBuscarAutor_Click);
+            // 
             // btnConsultar
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,7 +304,7 @@
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(116, 34);
-            this.btnConsultar.TabIndex = 17;
+            this.btnConsultar.TabIndex = 13;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -246,6 +313,9 @@
             // 
             this.dtgDadosConsultaItem.AllowUserToAddRows = false;
             this.dtgDadosConsultaItem.AllowUserToDeleteRows = false;
+            this.dtgDadosConsultaItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDadosConsultaItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDadosConsultaItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDadosConsultaItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -265,7 +335,7 @@
             this.dtgDadosConsultaItem.RowTemplate.Height = 28;
             this.dtgDadosConsultaItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDadosConsultaItem.Size = new System.Drawing.Size(1318, 370);
-            this.dtgDadosConsultaItem.TabIndex = 18;
+            this.dtgDadosConsultaItem.TabIndex = 14;
             this.dtgDadosConsultaItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDadosConsultaItem_CellDoubleClick);
             // 
             // colNomeItem
@@ -339,65 +409,14 @@
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(116, 34);
-            this.btnLimpar.TabIndex = 19;
+            this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnBuscarAutor
-            // 
-            this.btnBuscarAutor.FlatAppearance.BorderSize = 0;
-            this.btnBuscarAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarAutor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarAutor.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarAutor.Location = new System.Drawing.Point(1254, 77);
-            this.btnBuscarAutor.Name = "btnBuscarAutor";
-            this.btnBuscarAutor.Size = new System.Drawing.Size(58, 26);
-            this.btnBuscarAutor.TabIndex = 20;
-            this.btnBuscarAutor.UseVisualStyleBackColor = true;
-            this.btnBuscarAutor.Click += new System.EventHandler(this.btnBuscarAutor_Click);
-            // 
-            // btnBuscarLocal
-            // 
-            this.btnBuscarLocal.FlatAppearance.BorderSize = 0;
-            this.btnBuscarLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarLocal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarLocal.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarLocal.Location = new System.Drawing.Point(1254, 116);
-            this.btnBuscarLocal.Name = "btnBuscarLocal";
-            this.btnBuscarLocal.Size = new System.Drawing.Size(58, 26);
-            this.btnBuscarLocal.TabIndex = 21;
-            this.btnBuscarLocal.UseVisualStyleBackColor = true;
-            this.btnBuscarLocal.Click += new System.EventHandler(this.btnBuscarLocal_Click);
-            // 
-            // btnBuscarColecao
-            // 
-            this.btnBuscarColecao.FlatAppearance.BorderSize = 0;
-            this.btnBuscarColecao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarColecao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarColecao.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarColecao.Location = new System.Drawing.Point(1254, 164);
-            this.btnBuscarColecao.Name = "btnBuscarColecao";
-            this.btnBuscarColecao.Size = new System.Drawing.Size(58, 26);
-            this.btnBuscarColecao.TabIndex = 22;
-            this.btnBuscarColecao.UseVisualStyleBackColor = true;
-            this.btnBuscarColecao.Click += new System.EventHandler(this.btnBuscarColecao_Click);
-            // 
-            // btnBuscarSecao
-            // 
-            this.btnBuscarSecao.FlatAppearance.BorderSize = 0;
-            this.btnBuscarSecao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarSecao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarSecao.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarSecao.Location = new System.Drawing.Point(309, 74);
-            this.btnBuscarSecao.Name = "btnBuscarSecao";
-            this.btnBuscarSecao.Size = new System.Drawing.Size(58, 26);
-            this.btnBuscarSecao.TabIndex = 23;
-            this.btnBuscarSecao.UseVisualStyleBackColor = true;
-            this.btnBuscarSecao.Click += new System.EventHandler(this.btnBuscarSecao_Click);
-            // 
             // FormConsultaItem
             // 
+            this.AcceptButton = this.btnConsultar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 652);
@@ -438,20 +457,19 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox gpxDadosConsultaItem;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dtgDadosConsultaItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeAutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeEditora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeLocal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeColecao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeSecao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatusItem;
+        public System.Windows.Forms.DataGridView dtgDadosConsultaItem;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeItem;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colCodItem;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeAutor;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeEditora;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeLocal;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeColecao;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colTipoItem;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colNomeSecao;
+        public System.Windows.Forms.DataGridViewTextBoxColumn colStatusItem;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnBuscarAutor;
         private System.Windows.Forms.Button btnBuscarSecao;
-        private System.Windows.Forms.Button btnBuscarColecao;
         private System.Windows.Forms.Button btnBuscarLocal;
     }
 }
