@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarSecao));
             this.dtgDadosSecao = new System.Windows.Forms.DataGridView();
             this.colNomeSecao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeSecao = new System.Windows.Forms.TextBox();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.dtgDadosSecao);
             this.Controls.Add(this.txtNomeSecao);
             this.Controls.Add(this.lblNomeSecao);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBuscarSecao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Seção";

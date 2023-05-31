@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarAutor));
             this.lblNomeAutor = new System.Windows.Forms.Label();
             this.txtNomeAutor = new System.Windows.Forms.TextBox();
             this.dtgDadosAutor = new System.Windows.Forms.DataGridView();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.dtgDadosAutor);
             this.Controls.Add(this.txtNomeAutor);
             this.Controls.Add(this.lblNomeAutor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBuscarAutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Autor";

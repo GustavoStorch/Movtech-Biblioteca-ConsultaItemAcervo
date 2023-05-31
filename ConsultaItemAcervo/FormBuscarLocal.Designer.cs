@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarLocal));
             this.dtgDadosLocal = new System.Windows.Forms.DataGridView();
             this.colNomeLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeLocal = new System.Windows.Forms.TextBox();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.dtgDadosLocal);
             this.Controls.Add(this.txtNomeLocal);
             this.Controls.Add(this.lblNomeLocal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBuscarLocal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Local";
