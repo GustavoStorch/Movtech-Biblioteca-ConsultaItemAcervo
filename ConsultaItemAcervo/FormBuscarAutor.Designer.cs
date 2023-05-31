@@ -46,6 +46,8 @@
             // 
             // txtNomeAutor
             // 
+            this.txtNomeAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeAutor.Location = new System.Drawing.Point(70, 12);
             this.txtNomeAutor.Name = "txtNomeAutor";
             this.txtNomeAutor.Size = new System.Drawing.Size(540, 26);
@@ -56,6 +58,9 @@
             // 
             this.dtgDadosAutor.AllowUserToAddRows = false;
             this.dtgDadosAutor.AllowUserToDeleteRows = false;
+            this.dtgDadosAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDadosAutor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDadosAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDadosAutor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

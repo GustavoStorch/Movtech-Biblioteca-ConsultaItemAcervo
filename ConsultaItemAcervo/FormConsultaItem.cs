@@ -25,60 +25,40 @@ namespace ConsultaItemAcervo
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
-        {    
-            StringBuilder sql = new StringBuilder();
-            sql.AppendLine("SELECT codItem, nome, tipoItem, nomeEditora, nomeLocal, nomeAutor, nomeColecao, secao, statusItem");
-            sql.AppendLine("FROM mvtBibItemAcervo");
-            sql.AppendLine("WHERE 1 = 1");
+        {
+            InitializeTable2(dtgDadosConsultaItem);
+        }
 
-            if (!string.IsNullOrEmpty(txtNomeItemAcervo.Text.Trim()))
-            {
-                sql.AppendLine($"AND nome LIKE '%{txtNomeItemAcervo.Text.Trim()}%'");
-            }
-            if (!string.IsNullOrEmpty(txtNomeAutor.Text.Trim()))
-            {
-                sql.AppendLine($"AND nomeAutor LIKE '%{txtNomeAutor.Text.Trim()}%'");
-            }
-            if (!string.IsNullOrEmpty(txtNomeLocal.Text.Trim()))
-            {
-                sql.AppendLine($"AND nomeLocal LIKE '%{txtNomeLocal.Text.Trim()}%'");
-            }
-            if (!string.IsNullOrEmpty(txtNomeSecao.Text.Trim()))
-            {
-                sql.AppendLine($"AND secao = '{txtNomeSecao.Text.Trim()}'");
-            }
-            if (!string.IsNullOrEmpty(cbxTipoItem.Text.Trim()))
-            {
-                sql.AppendLine($"AND tipoItem = '{cbxTipoItem.Text.Trim()}'");
-            }
-            if (!string.IsNullOrEmpty(cbxStatus.Text.Trim()))
-            {
-                sql.AppendLine($"AND statusItem = '{cbxStatus.Text.Trim()}'");
-            }
-            
-            dtgDadosConsultaItem.Rows.Clear();
+        public void InitializeTable2(DataGridView dataGridView)
+        {
+            dataGridView.Rows.Clear();
 
             using (SqlConnection connection = DaoConnection.GetConexao())
             {
-             
-                using (SqlCommand command = new SqlCommand(sql.ToString(), connection))
+                ConsultaDAO dao = new ConsultaDAO(connection);
+                List<ConsultaItemModel> emprestimos = dao.BuscarEmprestimos(new ConsultaItemModel()
                 {
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        DataGridViewRow row = dtgDadosConsultaItem.Rows[dtgDadosConsultaItem.Rows.Add()];
-                        row.Cells[colCodItem.Index].Value = reader["codItem"].ToString();
-                        row.Cells[colNomeItem.Index].Value = reader["nome"].ToString();
-                        row.Cells[colTipoItem.Index].Value = reader["tipoItem"].ToString();
-                        row.Cells[colNomeEditora.Index].Value = reader["nomeEditora"].ToString();
-                        row.Cells[colNomeLocal.Index].Value = reader["nomeLocal"].ToString();
-                        row.Cells[colNomeAutor.Index].Value = reader["nomeAutor"].ToString();
-                        row.Cells[colNomeColecao.Index].Value = reader["nomeColecao"].ToString();
-                        row.Cells[colNomeSecao.Index].Value = reader["secao"].ToString();
-                        row.Cells[colStatusItem.Index].Value = reader["statusItem"].ToString();
+                    NomeItem = txtNomeItemAcervo.Text,
+                    NomeAutor = txtNomeAutor.Text,
+                    NomeLocal = txtNomeLocal.Text,
+                    NomeSecao = txtNomeSecao.Text,
+                    TipoItem = cbxTipoItem.Text,
+                    StatusItem = cbxStatus.Text
+                });
 
-                    }
-                } 
+                foreach (ConsultaItemModel emprestimo in emprestimos)
+                {
+                    DataGridViewRow row = dataGridView.Rows[dataGridView.Rows.Add()];
+                    row.Cells[colCodItem.Index].Value = emprestimo.CodItem;
+                    row.Cells[colNomeItem.Index].Value = emprestimo.NomeItem;
+                    row.Cells[colTipoItem.Index].Value = emprestimo.TipoItem;
+                    row.Cells[colNomeEditora.Index].Value = emprestimo.NomeEditora;
+                    row.Cells[colNomeLocal.Index].Value = emprestimo.NomeLocal;
+                    row.Cells[colNomeAutor.Index].Value = emprestimo.NomeAutor;
+                    row.Cells[colNomeColecao.Index].Value = emprestimo.NomeColecao;
+                    row.Cells[colNomeSecao.Index].Value = emprestimo.NomeSecao;
+                    row.Cells[colStatusItem.Index].Value = emprestimo.StatusItem;
+                }
             }
         }
 

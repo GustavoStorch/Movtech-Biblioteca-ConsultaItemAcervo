@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgDadosSecao = new System.Windows.Forms.DataGridView();
+            this.colNomeSecao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeSecao = new System.Windows.Forms.TextBox();
             this.lblNomeSecao = new System.Windows.Forms.Label();
-            this.colNomeSecao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDadosSecao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +39,9 @@
             // 
             this.dtgDadosSecao.AllowUserToAddRows = false;
             this.dtgDadosSecao.AllowUserToDeleteRows = false;
+            this.dtgDadosSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDadosSecao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDadosSecao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDadosSecao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -53,8 +56,17 @@
             this.dtgDadosSecao.TabIndex = 5;
             this.dtgDadosSecao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDadosSecao_CellDoubleClick);
             // 
+            // colNomeSecao
+            // 
+            this.colNomeSecao.HeaderText = "Seção";
+            this.colNomeSecao.MinimumWidth = 8;
+            this.colNomeSecao.Name = "colNomeSecao";
+            this.colNomeSecao.ReadOnly = true;
+            // 
             // txtNomeSecao
             // 
+            this.txtNomeSecao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeSecao.Location = new System.Drawing.Point(72, 12);
             this.txtNomeSecao.Name = "txtNomeSecao";
             this.txtNomeSecao.Size = new System.Drawing.Size(540, 26);
@@ -66,16 +78,9 @@
             this.lblNomeSecao.AutoSize = true;
             this.lblNomeSecao.Location = new System.Drawing.Point(14, 15);
             this.lblNomeSecao.Name = "lblNomeSecao";
-            this.lblNomeSecao.Size = new System.Drawing.Size(89, 30);
+            this.lblNomeSecao.Size = new System.Drawing.Size(59, 20);
             this.lblNomeSecao.TabIndex = 3;
             this.lblNomeSecao.Text = "Seção:";
-            // 
-            // colNomeSecao
-            // 
-            this.colNomeSecao.HeaderText = "Seção";
-            this.colNomeSecao.MinimumWidth = 8;
-            this.colNomeSecao.Name = "colNomeSecao";
-            this.colNomeSecao.ReadOnly = true;
             // 
             // FormBuscarSecao
             // 

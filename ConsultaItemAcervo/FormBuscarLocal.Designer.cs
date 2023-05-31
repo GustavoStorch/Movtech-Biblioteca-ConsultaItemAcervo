@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgDadosLocal = new System.Windows.Forms.DataGridView();
+            this.colNomeLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeLocal = new System.Windows.Forms.TextBox();
             this.lblNomeLocal = new System.Windows.Forms.Label();
-            this.colNomeLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDadosLocal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +39,9 @@
             // 
             this.dtgDadosLocal.AllowUserToAddRows = false;
             this.dtgDadosLocal.AllowUserToDeleteRows = false;
+            this.dtgDadosLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDadosLocal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDadosLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDadosLocal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -53,8 +56,17 @@
             this.dtgDadosLocal.TabIndex = 8;
             this.dtgDadosLocal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDadosLocal_CellDoubleClick);
             // 
+            // colNomeLocal
+            // 
+            this.colNomeLocal.HeaderText = "Local";
+            this.colNomeLocal.MinimumWidth = 8;
+            this.colNomeLocal.Name = "colNomeLocal";
+            this.colNomeLocal.ReadOnly = true;
+            // 
             // txtNomeLocal
             // 
+            this.txtNomeLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeLocal.Location = new System.Drawing.Point(71, 12);
             this.txtNomeLocal.Name = "txtNomeLocal";
             this.txtNomeLocal.Size = new System.Drawing.Size(540, 26);
@@ -66,16 +78,9 @@
             this.lblNomeLocal.AutoSize = true;
             this.lblNomeLocal.Location = new System.Drawing.Point(13, 15);
             this.lblNomeLocal.Name = "lblNomeLocal";
-            this.lblNomeLocal.Size = new System.Drawing.Size(77, 30);
+            this.lblNomeLocal.Size = new System.Drawing.Size(51, 20);
             this.lblNomeLocal.TabIndex = 6;
             this.lblNomeLocal.Text = "Local:";
-            // 
-            // colNomeLocal
-            // 
-            this.colNomeLocal.HeaderText = "Local";
-            this.colNomeLocal.MinimumWidth = 8;
-            this.colNomeLocal.Name = "colNomeLocal";
-            this.colNomeLocal.ReadOnly = true;
             // 
             // FormBuscarLocal
             // 
