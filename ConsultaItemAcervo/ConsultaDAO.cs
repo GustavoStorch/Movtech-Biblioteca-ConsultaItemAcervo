@@ -29,27 +29,33 @@ namespace ConsultaItemAcervo
                 sql.AppendLine("WHERE 1 = 1");
                 if (!string.IsNullOrEmpty(consulta.NomeItem))
                 {
-                    sql.AppendLine($"AND nome LIKE '%{consulta.NomeItem}%'");
+                    sql.AppendLine($"AND nome LIKE '%' + @NomeItem + '%'");
+                    command.Parameters.AddWithValue("@NomeItem", consulta.NomeItem);
                 }
                 if (!string.IsNullOrEmpty(consulta.NomeAutor))
                 {
-                    sql.AppendLine($"AND nomeAutor LIKE '%{consulta.NomeAutor}%'");
+                    sql.AppendLine($"AND nomeAutor LIKE '%' + @nomeAutor + '%'");
+                    command.Parameters.AddWithValue("@nomeAutor", consulta.NomeAutor);
                 }
                 if (!string.IsNullOrEmpty(consulta.NomeLocal))
                 {
-                    sql.AppendLine($"AND nomeLocal LIKE '%{consulta.NomeLocal}%'");
+                    sql.AppendLine($"AND nomeLocal LIKE '%' + @nomeLocal + '%'");
+                    command.Parameters.AddWithValue("@nomeLocal", consulta.NomeLocal);
                 }
                 if (!string.IsNullOrEmpty(consulta.NomeSecao))
                 {
-                    sql.AppendLine($"AND secao = '{consulta.NomeSecao}'");
+                    sql.AppendLine($"AND secao = @secao");
+                    command.Parameters.AddWithValue("@secao", consulta.NomeSecao);
                 }
                 if (!string.IsNullOrEmpty(consulta.TipoItem))
                 {
-                    sql.AppendLine($"AND tipoItem = '{consulta.TipoItem}'");
+                    sql.AppendLine($"AND tipoItem = @tipoItem");
+                    command.Parameters.AddWithValue("@tipoItem", consulta.TipoItem);
                 }
                 if (!string.IsNullOrEmpty(consulta.StatusItem))
                 {
-                    sql.AppendLine($"AND statusItem = '{consulta.StatusItem}'");
+                    sql.AppendLine($"AND statusItem = @statusItem");
+                    command.Parameters.AddWithValue("@statusItem", consulta.StatusItem);
                 }
 
                 command.CommandText = sql.ToString();
