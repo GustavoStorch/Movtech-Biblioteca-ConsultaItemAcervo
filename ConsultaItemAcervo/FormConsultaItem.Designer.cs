@@ -96,7 +96,7 @@
             // lblColecao
             // 
             this.lblColecao.AutoSize = true;
-            this.lblColecao.Location = new System.Drawing.Point(373, 165);
+            this.lblColecao.Location = new System.Drawing.Point(325, 165);
             this.lblColecao.Name = "lblColecao";
             this.lblColecao.Size = new System.Drawing.Size(71, 20);
             this.lblColecao.TabIndex = 3;
@@ -105,7 +105,7 @@
             // lblAutor
             // 
             this.lblAutor.AutoSize = true;
-            this.lblAutor.Location = new System.Drawing.Point(373, 77);
+            this.lblAutor.Location = new System.Drawing.Point(325, 77);
             this.lblAutor.Name = "lblAutor";
             this.lblAutor.Size = new System.Drawing.Size(52, 20);
             this.lblAutor.TabIndex = 4;
@@ -114,7 +114,7 @@
             // lblLocal
             // 
             this.lblLocal.AutoSize = true;
-            this.lblLocal.Location = new System.Drawing.Point(373, 119);
+            this.lblLocal.Location = new System.Drawing.Point(325, 119);
             this.lblLocal.Name = "lblLocal";
             this.lblLocal.Size = new System.Drawing.Size(51, 20);
             this.lblLocal.TabIndex = 5;
@@ -132,7 +132,7 @@
             // lblNomeItem
             // 
             this.lblNomeItem.AutoSize = true;
-            this.lblNomeItem.Location = new System.Drawing.Point(373, 34);
+            this.lblNomeItem.Location = new System.Drawing.Point(325, 34);
             this.lblNomeItem.Name = "lblNomeItem";
             this.lblNomeItem.Size = new System.Drawing.Size(113, 20);
             this.lblNomeItem.TabIndex = 7;
@@ -142,15 +142,17 @@
             // 
             this.txtCodItemAcervo.Enabled = false;
             this.txtCodItemAcervo.Location = new System.Drawing.Point(91, 31);
+            this.txtCodItemAcervo.MaxLength = 5;
             this.txtCodItemAcervo.Name = "txtCodItemAcervo";
-            this.txtCodItemAcervo.Size = new System.Drawing.Size(276, 26);
+            this.txtCodItemAcervo.Size = new System.Drawing.Size(228, 26);
             this.txtCodItemAcervo.TabIndex = 0;
             // 
             // txtNomeSecao
             // 
             this.txtNomeSecao.Location = new System.Drawing.Point(91, 74);
+            this.txtNomeSecao.MaxLength = 50;
             this.txtNomeSecao.Name = "txtNomeSecao";
-            this.txtNomeSecao.Size = new System.Drawing.Size(217, 26);
+            this.txtNomeSecao.Size = new System.Drawing.Size(164, 26);
             this.txtNomeSecao.TabIndex = 2;
             this.txtNomeSecao.TextChanged += new System.EventHandler(this.txtNomeSecao_TextChanged);
             // 
@@ -158,9 +160,10 @@
             // 
             this.txtNomeColecao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomeColecao.Location = new System.Drawing.Point(492, 162);
+            this.txtNomeColecao.Location = new System.Drawing.Point(444, 162);
+            this.txtNomeColecao.MaxLength = 50;
             this.txtNomeColecao.Name = "txtNomeColecao";
-            this.txtNomeColecao.Size = new System.Drawing.Size(820, 26);
+            this.txtNomeColecao.Size = new System.Drawing.Size(451, 26);
             this.txtNomeColecao.TabIndex = 10;
             this.txtNomeColecao.TextChanged += new System.EventHandler(this.txtNomeColecao_TextChanged);
             // 
@@ -168,9 +171,10 @@
             // 
             this.txtNomeAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomeAutor.Location = new System.Drawing.Point(492, 77);
+            this.txtNomeAutor.Location = new System.Drawing.Point(444, 77);
+            this.txtNomeAutor.MaxLength = 50;
             this.txtNomeAutor.Name = "txtNomeAutor";
-            this.txtNomeAutor.Size = new System.Drawing.Size(756, 26);
+            this.txtNomeAutor.Size = new System.Drawing.Size(387, 26);
             this.txtNomeAutor.TabIndex = 4;
             this.txtNomeAutor.TextChanged += new System.EventHandler(this.txtNomeAutor_TextChanged);
             // 
@@ -178,9 +182,10 @@
             // 
             this.txtNomeLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomeLocal.Location = new System.Drawing.Point(492, 116);
+            this.txtNomeLocal.Location = new System.Drawing.Point(444, 116);
+            this.txtNomeLocal.MaxLength = 50;
             this.txtNomeLocal.Name = "txtNomeLocal";
-            this.txtNomeLocal.Size = new System.Drawing.Size(756, 26);
+            this.txtNomeLocal.Size = new System.Drawing.Size(387, 26);
             this.txtNomeLocal.TabIndex = 7;
             this.txtNomeLocal.TextChanged += new System.EventHandler(this.txtNomeLocal_TextChanged);
             // 
@@ -188,9 +193,10 @@
             // 
             this.txtNomeItemAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomeItemAcervo.Location = new System.Drawing.Point(492, 31);
+            this.txtNomeItemAcervo.Location = new System.Drawing.Point(444, 31);
+            this.txtNomeItemAcervo.MaxLength = 50;
             this.txtNomeItemAcervo.Name = "txtNomeItemAcervo";
-            this.txtNomeItemAcervo.Size = new System.Drawing.Size(820, 26);
+            this.txtNomeItemAcervo.Size = new System.Drawing.Size(451, 26);
             this.txtNomeItemAcervo.TabIndex = 1;
             this.txtNomeItemAcervo.TextChanged += new System.EventHandler(this.txtNomeItemAcervo_TextChanged);
             // 
@@ -203,8 +209,9 @@
             "Emprestado",
             "Disponível"});
             this.cbxStatus.Location = new System.Drawing.Point(91, 162);
+            this.cbxStatus.MaxLength = 50;
             this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(276, 28);
+            this.cbxStatus.Size = new System.Drawing.Size(228, 28);
             this.cbxStatus.TabIndex = 9;
             this.cbxStatus.TextChanged += new System.EventHandler(this.cbxStatus_TextChanged);
             // 
@@ -221,8 +228,9 @@
             "Folheto",
             "Artigo"});
             this.cbxTipoItem.Location = new System.Drawing.Point(91, 116);
+            this.cbxTipoItem.MaxLength = 50;
             this.cbxTipoItem.Name = "cbxTipoItem";
-            this.cbxTipoItem.Size = new System.Drawing.Size(276, 28);
+            this.cbxTipoItem.Size = new System.Drawing.Size(228, 28);
             this.cbxTipoItem.TabIndex = 6;
             this.cbxTipoItem.TextChanged += new System.EventHandler(this.cbxTipoItem_TextChanged);
             // 
@@ -251,7 +259,7 @@
             this.gpxDadosConsultaItem.Controls.Add(this.lblAutor);
             this.gpxDadosConsultaItem.Location = new System.Drawing.Point(12, 12);
             this.gpxDadosConsultaItem.Name = "gpxDadosConsultaItem";
-            this.gpxDadosConsultaItem.Size = new System.Drawing.Size(1318, 208);
+            this.gpxDadosConsultaItem.Size = new System.Drawing.Size(903, 208);
             this.gpxDadosConsultaItem.TabIndex = 16;
             this.gpxDadosConsultaItem.TabStop = false;
             this.gpxDadosConsultaItem.Text = "Consulta Item";
@@ -262,7 +270,7 @@
             this.btnBuscarSecao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarSecao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBuscarSecao.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarSecao.Location = new System.Drawing.Point(309, 74);
+            this.btnBuscarSecao.Location = new System.Drawing.Point(261, 74);
             this.btnBuscarSecao.Name = "btnBuscarSecao";
             this.btnBuscarSecao.Size = new System.Drawing.Size(58, 26);
             this.btnBuscarSecao.TabIndex = 3;
@@ -276,7 +284,7 @@
             this.btnBuscarLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarLocal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBuscarLocal.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarLocal.Location = new System.Drawing.Point(1254, 116);
+            this.btnBuscarLocal.Location = new System.Drawing.Point(837, 116);
             this.btnBuscarLocal.Name = "btnBuscarLocal";
             this.btnBuscarLocal.Size = new System.Drawing.Size(58, 26);
             this.btnBuscarLocal.TabIndex = 8;
@@ -290,7 +298,7 @@
             this.btnBuscarAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarAutor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBuscarAutor.Image = global::ConsultaItemAcervo.Properties.Resources.lupa__1_;
-            this.btnBuscarAutor.Location = new System.Drawing.Point(1254, 77);
+            this.btnBuscarAutor.Location = new System.Drawing.Point(837, 77);
             this.btnBuscarAutor.Name = "btnBuscarAutor";
             this.btnBuscarAutor.Size = new System.Drawing.Size(58, 26);
             this.btnBuscarAutor.TabIndex = 5;
@@ -300,7 +308,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.Location = new System.Drawing.Point(1214, 228);
+            this.btnConsultar.Location = new System.Drawing.Point(799, 228);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(116, 34);
@@ -334,7 +342,7 @@
             this.dtgDadosConsultaItem.RowHeadersWidth = 62;
             this.dtgDadosConsultaItem.RowTemplate.Height = 28;
             this.dtgDadosConsultaItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDadosConsultaItem.Size = new System.Drawing.Size(1318, 370);
+            this.dtgDadosConsultaItem.Size = new System.Drawing.Size(903, 370);
             this.dtgDadosConsultaItem.TabIndex = 14;
             this.dtgDadosConsultaItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDadosConsultaItem_CellDoubleClick);
             // 
@@ -405,7 +413,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.Location = new System.Drawing.Point(1090, 228);
+            this.btnLimpar.Location = new System.Drawing.Point(675, 228);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(116, 34);
@@ -419,7 +427,7 @@
             this.AcceptButton = this.btnConsultar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 652);
+            this.ClientSize = new System.Drawing.Size(929, 652);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.dtgDadosConsultaItem);
             this.Controls.Add(this.btnConsultar);
