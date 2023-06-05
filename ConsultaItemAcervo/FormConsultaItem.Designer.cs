@@ -205,7 +205,6 @@
             this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Items.AddRange(new object[] {
-            "Reservado",
             "Emprestado",
             "Disponível"});
             this.cbxStatus.Location = new System.Drawing.Point(91, 162);
